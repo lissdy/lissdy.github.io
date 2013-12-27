@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[lissdy]]></title>
+  <link href="http://lissdy.github.io/atom.xml" rel="self"/>
+  <link href="http://lissdy.github.io/"/>
+  <updated>2013-12-27T10:43:21+08:00</updated>
+  <id>http://lissdy.github.io/</id>
+  <author>
+    <name><![CDATA[lissdy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用highcharts绘图]]></title>
+    <link href="http://lissdy.github.io/blog/2013/12/16/shi-yong-highchartshui-tu/"/>
+    <updated>2013-12-16T19:50:07+08:00</updated>
+    <id>http://lissdy.github.io/blog/2013/12/16/shi-yong-highchartshui-tu</id>
+    <content type="html"><![CDATA[<p>环境准备:</p>
+
+<p>Jquery库
+注:Highcharts依赖于jQuery或MooTools,所以在inculde highcharts.js文件之前需要先include jQuery或者MooTools</p>
+
+<p>1 下载地址:<a href="http://www.highcharts.com/download,">http://www.highcharts.com/download,</a>
+下载完成之后解压缩,提取highcharts.js文件,将其拷贝到项目目录/puclic/javascripts下</p>
+
+<p>2 在测试页面中加入</p>
+
+<pre><code>    #/app/views/layouts/applications.html.erb
+    &lt;%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %&gt;
+</code></pre>
+
+<p>3 加入测试代码,最近空气较差,就模拟这个吧&hellip;</p>
+
+<pre><code>    #/app/views/layouts/applications.html.erb
+    &lt;%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %&gt;
+    &lt;div id="test_chart" style="width: 560px; height: 300px;"&gt;&lt;/div&gt;
+     &lt;script type="text/javascript" charset="utf-8"&gt;
+        $(function () {
+            new Highcharts.Chart({
+                chart: { renderTo: 'test_chart' },  // 传入div id,指定chart位置
+                title: { text: '空气质量检测' },  // chart标题
+                xAxis: {
+                    title: { text: '日期'},   //x轴标题
+                    type: 'datetime'       //x轴数据类型
+                },
+                yAxis: {
+                    title: { text: 'PM2.5'}    //y轴标题
+                },
+                series: [{
+                    name: "北京",
+                    pointInterval: &lt;%= 1.day * 1000 %&gt;,   //x轴间隔,单位是微秒
+                    pointStart: &lt;%= 1.weeks.ago.at_midnight.to_i * 1000 %&gt;, //x轴起始
+                    data: [100,200,500,700] //随便指定一个数组模拟一下
+                },
+                    {
+                        name: "上海",
+                        pointInterval: &lt;%= 1.day * 1000 %&gt;,   //x轴间隔,单位是微秒
+                        pointStart: &lt;%= 1.weeks.ago.at_midnight.to_i * 1000 %&gt;, //x轴起始
+                        data: [200,100,600,300] //随便指定一个数组模拟一下
+                    }
+                ]
+            });
+        });
+</code></pre>
+
+<p></script></p>
+
+<p>4 刷新页面,查看结果
+<img src="test.png" alt="image" /></p>
+]]></content>
+  </entry>
+  
+</feed>
