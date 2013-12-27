@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/octopress.iml" filepath="$PROJECT_DIR$/.idea/octopress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/octopress.iml" filepath="$PROJECT_DIR$/.idea/octopress.iml" />
     </modules>
   </component>
 </project>

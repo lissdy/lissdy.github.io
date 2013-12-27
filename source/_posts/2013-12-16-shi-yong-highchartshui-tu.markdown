@@ -52,7 +52,7 @@ Jquery库
 
 
 4 刷新页面,查看结果
-![image](file:///home/lissdy/markdown_image/test.png)
+![image](test.png)
 
 
 
