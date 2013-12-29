@@ -52,7 +52,8 @@ Jquery库
 
 
 4 刷新页面,查看结果
-![折线图](http://ww3.sinaimg.cn/mw690/7f128520gw1ebz9lgt1kfj20fq081wet.jpg)
+
+![折线图](http://ww3.sinaimg.cn/mw690/7f128520gw1ebz9lgt1kfj20fq081wet.jpg)(center)
 
 
 
